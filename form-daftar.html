@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>UTS | Input Data</title>
+    <link rel="stylesheet" href="./style/form-style.css">
+    <link rel="stylesheet" href="style/shadow.css"/> 
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+</head>
+<body>
+  
+    <div class="form-container slide2-form">
+        <!-- FORM PENDAFATARAN -->
+        <div class="form-box slide2-box">
+            <h2>Input Form</h2>
+            <form action="Backend/proses-pendaftaran.php" method="post">
+                
+                <div class="field">
+                    <i class="uil uil-user"></i>
+                    <!-- autocomplete="off" untuk menghilangkan save data form html -->
+                    <input type="text" placeholder="Nama Sesuai KTP" name="nama" autocomplete="off" required >
+                </div>
+                <div class="field">
+                    <i class="uil uil-book-open"></i>
+                    <input type="text" placeholder="Program Studi" name="prodi" id="prodi" autocomplete="off">
+                </div>
+                <div class="field">
+                    <i class="uil uil-balance-scale"></i>
+                    <input type="text" placeholder="Fakultas" name="fakultas" id="fakultas" autocomplete="off">
+                </div>
+                <div class="field">
+                    <i class="uil uil-book-reader"></i>
+                    <input type="text" placeholder="Semester" name="semester" id="semester" autocomplete="off">
+                </div>
+                <div class="field">
+                    <i class="uil uil-palette"></i>
+                    <input type="text" placeholder="Hobi" name="hobi" id="hobi" autocomplete="off">
+                </div>
+                <div class="field">
+                    <i class="uil uil-at"></i>
+                    <input type="email" placeholder="Email@example.com" name="email" id="email" autocomplete="off">
+                </div>
+                <div class="field">
+                    <i class="uil uil-whatsapp"></i>
+                    <input type="text" placeholder="Nomor Whatsapp" name="no_wa" id="no-wa" autocomplete="off">
+                </div>
+                <div class="field">
+                    <i class="uil uil-home"></i>
+                    <input type="text" placeholder="Alamat Sesuai KTP" name="alamat" id="alamat">
+                </div>
+                <div class="field">
+                    <textarea placeholder="Alamat Saat Ini" name="domisili" id="domisili" cols="24" rows="4"></textarea>
+                </div>
+                <div class="field2">
+                    <i class="uil uil-map-marker"></i>
+                    <select id="kota" name="kota">
+                        <option value="NULL">Kota</option>
+                        <option value="Bandung Kota">Bandung Kota</option>
+                        <option value="Kab. Bandung">Kab. Bandung</option>
+                        <option value="Luar Bandung">Luar Bandung</option>
+                    </select>
+                </div>
+                <div class="field2">
+                    <i class="uil uil-calendar-alt"></i>
+                    <input type="date" placeholder="Tanggal Lahir" name="tgl_lahir" id="tgl-lahir">
+                </div>
+                <div class="gender">
+                    <input type="radio" name="gender" id="gender" value="Pria"><label for="gender">Pria</label>
+                    <input type="radio" name="gender" id="gender" value="Wanita"><label for="gender">Wanita</label>
+                </div>
+                <a class="tombol-kembali shadow-dreamy" href="index.php">Kembali</a>
+                <input class="tombol-submit shadow-dreamy" type="submit" value="Kirim" name="daftar">
+            </form>
+
+        </div>
+    </div>
+
+    <script>
+        //input field focus effect
+        const textInput = document.querySelectorAll("input");
+
+        textInput.forEach(textInput => {
+
+            //ketika input di klik maka akan mengaktifkan field script
+            textInput.addEventListener("focus", () => {
+                let parent = textInput.parentNode;
+                parent.classList.add("active");
+            });
+
+            //mematikan field script ketika klik field yang lain
+            textInput.addEventListener("blur", () => {
+                let parent = textInput.parentNode;
+                parent.classList.remove("active");
+            });
+        });
+    </script>
+</body>
+</html>
